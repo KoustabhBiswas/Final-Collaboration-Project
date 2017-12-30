@@ -1,0 +1,77 @@
+ 
+ 
+	<div class="col-lg-12" ng-controller="BlogController as ctrl">
+		<br/><br/><br/>
+		 <form ng-submit="ctrl.createBlog()">
+		 	<input type="hidden" ng-model="ctrl.blog.blogId">
+		 		<div class="form-group">
+		 			<label >Enter Blog Name:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.blog.blogName">
+		 		</div>
+		 		<div class="form-group">
+		 			<label >Enter Post:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.blog.blogPost">
+		 		</div>
+		 		 <input type="submit" value="POST"/>
+		 </form>
+		 <br/>
+		<div class="col-lg-12" ng-show="currentUser.userType=='User'" ng-init="ctrl.myBlogList()">
+		<div class="col-lg-12"  ng-repeat="ub in ctrl.myBlogs">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title" style="font-weight: bold;">
+						<b><a ng-href="#/viewblog">{{ub.blogName}}</a></b>
+					</h3>
+				</div>
+				<div class="panel-body" style="text-align: justify;">
+					{{ub.blogPost}}<br/>
+				</div>
+				<p>
+					<span class="glyphicon glyphicon-calander"></span> Posted on {{ub.createDate}}&nbsp;&nbsp;&nbsp;
+					<span class="glyphicon glyphicon-user"></span> Posted on {{ub.blogStatus}}
+				</p>
+	 			
+				<p><button class="btn btn-info" ng-click="ctrl.likeClick(ub.blogId)">Likes{{ ub.blogLikes }}</button></p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.deleteBlog(ub.blogId)"> Delete</button>
+				</p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.updateBlogById(ub.blogId)"> Update</button>
+				</p>
+				<!--  ng-hide="currentUser.useremail==undefined"-->
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-12" ng-show="currentUser.userType=='Admin'" ng-init="ctrl.blogList()">
+		<div class="col-lg-12"  ng-repeat="ub1 in ctrl.blogs">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title" style="font-weight: bold;">
+						<b><a ng-href="#/viewblog">{{ub1.blogName}}</a></b>
+					</h3>
+				</div>
+				<div class="panel-body" style="text-align: justify;">
+					{{ub1.blogPost}}<br/>
+				</div>
+				<p>
+					<span class="glyphicon glyphicon-calander"></span> Posted on {{ub1.createDate}}&nbsp;&nbsp;&nbsp;
+					<span class="glyphicon glyphicon-user" ng-show="ub1.blogStatus == 'A'">Approved</span >
+				</p>
+	 			
+				<p><button class="btn btn-info" ng-click="ctrl.likeClick(ub.blogId)">Likes{{ ub1.blogLikes }}</button></p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.deleteBlog(ub1.blogId)"> Delete</button>
+				</p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.updateBlogById(ub1.blogId)"> Update</button>
+				</p>
+				<p ng-show="ub1.blogStatus == 'NA'">
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.approveBlog(ub1.blogId)"> Approve</button>
+				</p>
+				<!--  ng-hide="currentUser.useremail==undefined"-->
+			</div>
+		</div>
+	</div>
+			 
+	</div>	 

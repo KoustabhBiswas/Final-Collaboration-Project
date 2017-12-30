@@ -1,0 +1,31 @@
+'use strict' 
+app.controller('BlogController', ['$scope', 'BlogService', '$location', '$rootScope',
+                                function($scope, BlogService, $location, $rootScope) {
+	
+	console.log("user blog controller");
+	
+	var self = this;
+    self.blog={
+    		blogId:'', blogName:'', 
+    		blogPost:'', blogStatus:'', blogLikes:'', createDate: ''};
+
+    self.blogs=[];
+    
+    self.fetchAllBlogs = function()
+    {
+        BlogService.fetchAllBlogs().then(function(d)
+    	{
+        	self.blogs = d;
+            console.log("Fetch all user blogs")
+        },
+        function(errResponse)
+        {
+        	console.error('Error while fetching User blog'+ errResponse);
+        }
+      );
+   };
+    
+  // self.fetchAllBlogs();
+   
+ 
+}]);

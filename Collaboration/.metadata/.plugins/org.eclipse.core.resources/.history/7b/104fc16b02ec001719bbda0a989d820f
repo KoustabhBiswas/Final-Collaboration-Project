@@ -1,0 +1,17 @@
+package com.niit.Collaboration_Back.model;
+
+import java.util.Date;
+
+import javax.persistence.OneToOne;
+
+public class Event {
+	private int forumId;
+	private String forumName;
+	private String forumTitle;
+	private String forumDescription;
+	
+	private Date forumCreateDate;
+	private String forumStatus;
+	 
+	private Users users;
+}

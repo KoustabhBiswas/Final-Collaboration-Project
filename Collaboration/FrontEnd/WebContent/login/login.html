@@ -1,0 +1,125 @@
+<!-- <div class="col-md-6 col-md-offset-3">
+    <h2>Login</h2>
+    <form name="form" ng-submit="vm.login()" role="form">
+        <div class="form-group" ng-class="{ 'has-error': form.username.$dirty && form.username.$error.required }">
+            <label for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control" ng-model="vm.user.emailId" required />
+            <span ng-show="form.username.$dirty && form.username.$error.required" class="help-block">Username is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="vm.user.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn btn-primary">Login</button>
+            <img ng-if="vm.dataLoading" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+            <a href="#!/register" class="btn btn-link">Register</a>
+             <a href="#!/blog" class="btn btn-link">Blog</a>
+        </div>
+    </form>
+</div>
+ -->
+ 
+ <style>
+body {
+	font-family: 'Open Sans', sans-serif;
+	background: #D5D8DC;
+}
+.logo i {
+	font-size: 31px;
+	margin-right: 4px;
+	word-spacing: 14px;
+}
+.logo {
+	color: white;
+	margin: 0;
+	font-size: 20px;
+	padding: 4px 0;
+	padding-bottom: 15px;
+}
+.login-bottom-text {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	font-size: 12px;
+	color: white;
+	line-height: 19px;
+}
+header {
+	background: #ABEBC6;
+	padding-top: 20px;
+}
+header .form-group {
+	margin-bottom: 0px;
+}
+header .btn-header-login {
+	margin-bottom: 15px;
+}
+.login-main {
+	margin-top: 130px;
+}
+.multibox {
+	padding-left: 0px;
+	padding-bottom: 10px;
+}
+.login-main span {
+	font-size: 12px;
+}
+</style>
+
+<header>
+	<div class="container" ng-controller="UserController as userCtrl">
+		<div class="row">
+			<div class="col-sm-6">
+				<h3>
+					<a href="#!afterlogin">ChatBox</a>
+				</h3>
+			</div>
+
+			<form name="loginform">
+				<div class="col-sm-6 hidden-xs">
+					<div class="row">
+						<div class="col-sm-4">
+							<div class="form-group"
+							>
+								<!-- ng-hide="currentUser.userId" -->
+								<input type="email" class="form-control"
+									placeholder="Email Address" ng-model="userCtrl.guest.email"
+									ng-required="true">
+								
+								<div class="login-bottom-text checkbox hidden-sm">
+									<label> <input type="checkbox" id=""> Keep me
+										sign in
+									</label>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="form-group">
+								<!--ng-hide="currentUser.userId"  -->
+								<input type="password" class="form-control"
+									placeholder="Password" ng-model="userCtrl.guest.password"
+									ng-required="true">
+
+							</div>
+						</div>
+						<div class="col-sm-2">
+							<div class="form-group">
+								<!--  -->
+								<!-- <input type="submit" value="login" class="btn btn-default btn-header-login" ng-click="validateUser()"> -->
+								<a href class="btn btn-default"
+									ng-click="userCtrl.validateUser()"
+									ng-disabled="loginform.$invalid">Login</a>
+								<!-- <input type="submit" class="btn btn-primary" ng-click="userCtrl.validateUser" value="Login" > -->
+							</div>
+						</div>
+
+
+
+
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</header>

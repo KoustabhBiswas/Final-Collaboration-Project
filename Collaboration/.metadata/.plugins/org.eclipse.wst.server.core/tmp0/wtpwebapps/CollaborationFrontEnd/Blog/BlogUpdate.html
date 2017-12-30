@@ -1,0 +1,14 @@
+ <div class="col-md-12" ng-controller="BlogController as ctrl" ng-init="ctrl.updateBlogById(ctrl.blog.blogId)" >
+ <form ng-submit="ctrl.createBlog()">
+		 		<div class="form-group">
+		 			<label >Enter Blog Name:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.blogs.blogName" value= {{ ctrl.blogs.blogName }}>
+		 		</div>
+		 		<div class="form-group">
+		 			<label >Enter Post:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.blogs.blogPost" >
+		 		</div>
+		 		 <input type="submit" value="POST"/>
+		 </form>
+		 <h1>{{ ctrl.blog.blogName }}</h1>
+		 </div>

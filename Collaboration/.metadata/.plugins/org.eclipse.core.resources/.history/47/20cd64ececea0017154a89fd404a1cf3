@@ -1,0 +1,17 @@
+<h1 ng-controller="LoginController">Hi {{currentUser.emailId}}</h1>
+<p ng-show="currentUser.role=='Admin'">You're logged in!!</p>
+<h3>All registered users:</h3>
+<ul>
+    <li ng-repeat="user in vm.allUsers">
+        {{user.emailId}} ({{user.firstName}} {{user.lastName}})
+        - <a ng-click="vm.deleteUser(user.id)">Delete</a>
+    </li>
+</ul>
+<a href="#!/blog">Blog</a>
+<a href="#!/forum">Forum</a>
+<p>&nbsp;</p>
+<p><a href="#!/login" class="btn btn-primary">Logout</a></p>
+<!-- <script src="//code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-route.min.js"></script>
+    <script src="//code.angularjs.org/1.6.0/angular-cookies.min.js"></script> -->

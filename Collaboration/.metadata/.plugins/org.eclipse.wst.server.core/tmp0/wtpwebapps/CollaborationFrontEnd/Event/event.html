@@ -1,0 +1,80 @@
+ 
+ 
+	<div class="col-lg-12" ng-controller="EventController as ctrl">
+		<br/><br/><br/>
+		 <form ng-submit="ctrl.addForum()">
+		 	<input type="hidden" ng-model="ctrl.forum.forumId" role="form">
+		 		<div class="form-group">
+		 			<label >Enter Forum Name:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.forum.forumName">
+		 		</div>
+		 		<div class="form-group">
+		 			<label >Enter Forum Title:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.forum.forumTitle">
+		 		</div>
+		 		<div class="form-group">
+		 			<label >Enter Forum Description:</label>
+		 			<input type="text" class="form-control" ng-model="ctrl.forum.forumDescription">
+		 		</div>
+		 		 <input type="submit" value="POST"/>
+		 </form>
+		 <br/>
+	 <div class="col-lg-12" ng-show="currentUser.userType=='User'" ng-init="ctrl.myForumList()">
+		<div class="col-lg-12"  ng-repeat="ub in ctrl.myforums">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title" style="font-weight: bold;">
+						<b><a ng-href="#/viewblog">{{ub.forumName}}</a></b>
+					</h3>
+				</div>
+				<div class="panel-body" style="text-align: justify;">
+					{{ub.forumDescription}}<br/>
+				</div>
+				<p>
+					<span class="glyphicon glyphicon-calander"></span> Posted on {{ub.createDate}}&nbsp;&nbsp;&nbsp;
+					<span class="glyphicon glyphicon-user"></span> Posted on {{ub.forumStatus}}
+				</p>
+	 			
+				<p><button class="btn btn-info" ng-click="ctrl.likeClick(ub.blogId)">Likes{{ ub.forumLikes }}</button></p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.deleteForum(ub.forumId)"> Delete</button>
+				</p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.updateForumById(ub.forumId)"> Update</button>
+				</p>
+				<!--  ng-hide="currentUser.useremail==undefined"-->
+			</div>
+		</div>
+	</div>
+	
+	<div class="col-lg-12" ng-show="currentUser.userType=='Admin'" ng-init="ctrl.forumList()">
+		<div class="col-lg-12"  ng-repeat="ub in ctrl.forums">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+					<h3 class="panel-title" style="font-weight: bold;">
+						<b><a ng-href="#/viewblog">{{ub.forumName}}</a></b>
+					</h3>
+				</div>
+				<div class="panel-body" style="text-align: justify;">
+					{{ub.forumDescription}}<br/>
+				</div>
+				<p>
+					<span class="glyphicon glyphicon-calander"></span> Posted on {{ub.createDate}}&nbsp;&nbsp;&nbsp;
+					<span class="glyphicon glyphicon-user"></span> Posted on {{ub.forumStatus}}
+				</p>
+	 			
+				<p><button class="btn btn-info" ng-click="ctrl.likeClick(ub.blogId)">Likes{{ ub.forumLikes }}</button></p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.deleteForum(ub.forumId)"> Delete</button>
+				</p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.updateForumById(ub.forumId)"> Update</button>
+				</p>
+				<p >
+					&nbsp; <button name="buttom" class="btn btn-success" ng-click="ctrl.approveForum(ub.forumId)"> Approve</button>
+				</p>
+				<!--  ng-hide="currentUser.useremail==undefined"-->
+			</div>
+		</div>
+	</div>
+	</div>	 

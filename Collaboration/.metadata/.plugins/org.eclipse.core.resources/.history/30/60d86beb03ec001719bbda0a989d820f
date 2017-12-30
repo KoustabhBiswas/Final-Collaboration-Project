@@ -1,0 +1,55 @@
+package com.niit.Collaboration_Back.daoImpl;
+
+import java.util.List;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.niit.Collaboration_Back.dao.EventDao;
+import com.niit.Collaboration_Back.model.Event;
+
+public class EventDaoImpl implements EventDao{
+	@Autowired
+	SessionFactory sessionFactory;
+	@Override
+	public boolean addForum(Event event) {
+		// TODO Auto-generated method stub
+		 try {
+			 sessionFactory.getCurrentSession().save(event);
+			 return true;
+		 }catch(Exception e) {
+			 return false;
+		 }
+	}
+
+	@Override
+	public boolean updateForum(Event event) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public boolean deleteForum(Event event) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+	@Override
+	public Event getById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Event> getAllForum() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Event> getByUser(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

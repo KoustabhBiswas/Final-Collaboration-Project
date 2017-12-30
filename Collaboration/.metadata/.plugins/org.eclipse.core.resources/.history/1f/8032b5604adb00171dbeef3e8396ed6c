@@ -1,0 +1,22 @@
+app.controller('BlogController', [
+				'$http',
+				'BlogService',
+				'$scope',
+				'$rootScope',
+				'$cookieStore',
+				function($http,BlogService,$scope,$rootScope,$cookieStore){
+					var self = this;
+					self.blogs = {blogId: '',blogName: '', blogPost: '' , blogStatus: '' , createDate: '', blogLikes: ''};
+					console.log("hii");
+					self.blogList = function(){
+						BlogService.getAllBlog().then(function(response){
+							console.log("in side controller");
+							self.blogs = response.data;
+						},
+						function(errors){
+							alert("Error");
+						});
+					}
+				}
+				
+])

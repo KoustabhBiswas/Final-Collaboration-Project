@@ -1,0 +1,5 @@
+package com.niit.Collaboration_Back.model;
+
+public class Chat {
+
+}

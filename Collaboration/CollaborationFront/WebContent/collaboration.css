@@ -1,0 +1,152 @@
+.submitbtn:hover{
+		color:#ffbf00;
+	}
+a:hover{
+	text-decoration:none;
+}
+.nav_container{
+	background-color:#00bfff;
+	height:100px;
+	animation-name: nav-container;
+    animation-duration: 4s;
+	animation-iteration-count: 1;
+}
+@keyframes nav-container{
+	from { background-color:white; }
+    
+	to { background-color:#00bfff; }
+}
+.nav_header{
+	border:0px solid red;
+	font-size:20px;
+	color:white;
+	margin-top:2%;
+	margin-left:20%;
+	 
+	animation-name: example;
+    animation-duration: 3s;
+	animation-iteration-count: 1;
+	
+	
+}
+ @keyframes example {
+    from{margin-top:0%; opacity:0;   }
+     
+	to {margin-top:2%; opacity:1;  }
+}
+.nav_form{
+	height:100px;
+	width:700px;
+	border:0px solid red;
+	margin-left:10%;
+}
+.email{
+	margin-top:5%;
+	animation-name:email;
+	animation-iteration-count:1;
+	animation-duration:5s;
+	
+}
+@keyframes email{
+	from{margin-top:0%; opacity:0;}
+	 
+	to{margin-top:5%; opacity:1;}
+}
+.firstname{
+	float:left;
+	margin-left:20%;
+	opacity:1;
+	animation-name:firstname;
+	animation-duration:3s;
+	animation-iteration-count:1;
+	transition:3s;
+}
+@keyframes firstname{
+	
+	from{margin-left:0%;opacity:0;}
+	to{margin-left:20%;opacity:1;}
+}
+.lastname{
+	float:right;
+	
+	opacity:1;
+	animation-name:lastname;
+	animation-duration:3s;
+	animation-iteration-count:1;
+	transition:3s;
+}
+@keyframes lastname{
+	
+	from{margin-right:0%;opacity:0;}
+	to{margin-right:30%;opacity:1;}
+}
+.Email{
+	margin-top:0.5%;
+	opacity:1;
+	animation-name:Email;
+	animation-duration:4s;
+	animation-iteration-count:1
+}
+@keyframes Email{
+	from{margin-left:0%; opacity:0;}
+	to{margin-left:21%;opacity:1;}
+}
+.Email_label{
+	float:right;
+	margin-right:55%;
+	opacity:1;
+	animation-name:Email_label;
+	animation-duration:4s;
+	animation-iteration-count:1;
+}
+@keyframes Email_label{
+	from{margin-right:0%; opacity:0;}
+	to{margin-right:55%; opacity:1;}
+}
+.pass{
+	animation-name:pass;
+	animation-duration:4s;
+	animation-iteration-count:1;
+}
+@keyframes pass{
+	from{margin-top:30%;}
+	to{margin-top:0%;}
+}
+.confirm{
+	animation-name:confirm;
+	animation-duration:2s;
+	animation-iteration-count:1;
+}
+@keyframes confirm{
+	from{margin-left:30%; opacity:0;}
+	to{margin-left:5%; opacity:1}
+}
+.select{
+	animation-name:select;
+	animation-duration:3s;
+	animation-iteration-count:1;
+}
+@keyframes select{
+	from{margin-top:80%; opacity:0;}
+	to{margin-top:0%; opacity:1}
+}
+.submit{
+	padding:7px 180px 7px 180px;
+	color:white;
+	background-color:#84F532;
+	font-size:18px;
+	box-shadow:3px 3px 5px grey, -1px 0px 20px grey;
+	border:0px ;
+	border-style:none;
+	border-radius:7px;
+	margin-top:1.5%;
+}
+.footer{
+	
+	 
+}
+.footer_panel{
+	float:left;
+	width:300px;
+	
+}

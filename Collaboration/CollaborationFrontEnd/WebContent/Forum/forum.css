@@ -1,0 +1,94 @@
+a:hover{
+	text-decoration:none;
+}
+.nav_header{
+	font-size:18px;
+	margin-top:1%;
+	color:white;
+	
+}
+.nav_home{
+	font-size:16px;
+	padding:5px 10px 5px 10px;
+	margin-left:12%;
+	margin-top:1%;
+}
+.nav_chat{
+	font-size:16px;
+	padding:5px 10px 5px 10px;
+	margin-left:2%;
+	margin-top:1%;
+}
+.forum{
+	border:0px solid;
+	height:602px;
+	top:99px;
+	position:fixed;
+	left:0px;
+}
+.chat_box{
+	border:0px solid;
+	height:600px;
+	bottom:0px;
+	width:300px;
+	top:290px;
+	position:fixed;
+	z-index:1; 
+	left:811px;
+	background-color:white;
+	border-left:2px solid  #66b3ff;
+	border-radius:10px;
+	box-shadow:2px 2px 4px grey, 1px 0px 20px rgba(0,0,0,0.2);
+	cursor:pointer;
+}
+.chat_online{
+	border:0px solid;
+	position:fixed; 
+	height:602px; 
+	left:1113px;
+	top:99px;
+	width:236px;
+	background-color:green;
+}
+.news_feed{
+	border:0px solid;
+	height:1592px; 
+	left:215px;
+	top:-30px;
+}
+.chat_box_header{
+	border:0px solid;
+	left:-15px;
+	width:300px;
+	background-color: #66b3ff;
+	height:40px;
+	border-top-left-radius:9px;
+}
+.message_box{
+	width:300px;
+	height:40px;
+	border-top:1px solid;
+	left:-15px;
+	top:291.5px;
+}
+.close_icon{
+	margin-top:2%;
+	font-size:20px;
+}
+.close_icon:hover{
+	color:red;
+	cursor:pointer;
+}
+.status_box{
+	height:200px;
+	border:0px solid red;
+	margin-left:5%;
+}
+.add_status{
+	float:left;
+	border:0px solid;
+} 
+.add_photo{
+	border:0px solid;
+	background-color: #b3b3ff;
+}

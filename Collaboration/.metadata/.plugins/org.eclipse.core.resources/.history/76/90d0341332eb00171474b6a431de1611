@@ -1,0 +1,44 @@
+app.controller('ForumController',[
+				'ForumService',
+				'$http',
+				'$scope',
+				'$rootScope',
+				'$location',
+				'$cookieStore',
+				function(ForumService,$http, $scope,$rootScope,$location,$cookieStore){
+					var self = this;
+					self.forum = {};
+					self.addForum = function(){
+						ForumService.addForum(self.forum).then(function(response){
+							//self.forum = response;
+							$location.path("/forum");
+						},function(error){
+							alert("Error");
+						});
+					}
+					
+					self.forumList = function(){
+						//self.blogs = $rootScope.currentUser;
+						BlogService.getAllBlog().then(function(response){
+							console.log("in side controller");
+							self.blogs = response;
+							
+							 
+						},
+						function(errors){
+							alert("Error");
+						});
+					}
+					
+					self.myForumList = function(){
+						self.buId = $cookieStore.get('currentUser').userId;
+						BlogService.getMyBlog(self.buId).then(function(response){
+							self.myBlogs = response;
+						},function(error){
+							alert("Error getting data");
+						});
+					}
+					
+					 
+				}
+])
